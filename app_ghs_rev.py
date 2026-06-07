@@ -869,66 +869,34 @@ elif menu == "ℹ️  Tentang Aplikasi":
         tim = [
             {
                 "avatar": "👨‍💻",
-                "nama": "Dr. Budi Santoso, S.T., M.T.",
-                "peran": "Lead Developer & System Architect",
-                "spesialis": "Teknik Kimia & Sistem Informasi K3",
-                "institusi": "Institut Teknologi Bandung",
+                "nama": "Danapatti Arya Lazuardi",
+                "nim": "2430552",
             },
             {
                 "avatar": "👩‍🔬",
-                "nama": "Ir. Sari Dewi Pratiwi, M.Sc.",
-                "peran": "Ahli K3 & Content Expert",
-                "spesialis": "Kesehatan & Keselamatan Kerja (K3)",
-                "institusi": "Universitas Indonesia",
+                "nama": "Daniswara Rizki",
+                "nim": "2430553",
             },
             {
                 "avatar": "👨‍🎨",
-                "nama": "Rizky Firmansyah, S.Ds.",
-                "peran": "UI/UX Designer",
-                "spesialis": "Desain Antarmuka & Pengalaman Pengguna",
-                "institusi": "Institut Seni Indonesia Yogyakarta",
-            },
-            {
-                "avatar": "👩‍⚕️",
-                "nama": "dr. Anita Rahayu, Sp.Ok.",
-                "peran": "Medical Advisor",
-                "spesialis": "Kedokteran Okupasi & Toksikologi",
-                "institusi": "RSUP Dr. Sardjito Yogyakarta",
-            },
-            {
-                "avatar": "👨‍🏫",
-                "nama": "Prof. Hendra Wijaya, Ph.D.",
-                "peran": "Scientific Advisor",
-                "spesialis": "Kimia Lingkungan & Toksikologi Industri",
-                "institusi": "Universitas Gadjah Mada",
-            },
-            {
-                "avatar": "👩‍💼",
-                "nama": "Dra. Maya Kusumawati, M.M.",
-                "peran": "Project Manager",
-                "spesialis": "Manajemen Proyek & Regulasi K3LH",
-                "institusi": "Kementerian Ketenagakerjaan RI",
-            },
+                "nama": "Faza Zain Ariq Athallah",
+                "nim": "2430559",
         ]
 
         cols = st.columns(3)
         for i, t in enumerate(tim):
             with cols[i % 3]:
                 st.markdown(f"""
-                <div class='team-card' style='margin-bottom:1rem;'>
-                    <div style='font-size:2.5rem;margin-bottom:.5rem;'>{t['avatar']}</div>
-                    <div style='font-family:Rajdhani,sans-serif;font-weight:700;
-                                color:#d0dce8;font-size:1rem;line-height:1.3;
-                                margin-bottom:.3rem;'>{t['nama']}</div>
-                    <div style='font-size:.78rem;color:#f0a500;font-weight:600;
-                                margin-bottom:.4rem;'>{t['peran']}</div>
-                    <div style='font-size:.76rem;color:#5a7a9a;line-height:1.5;'>
-                        🔬 {t['spesialis']}<br>
-                        🏛️ {t['institusi']}
+                    <div class='team-card' style='margin-bottom:1rem;'>
+                        <div style='font-size:2.5rem;margin-bottom:.5rem;'>{t['avatar']}</div>
+                        <div style='font-family:Rajdhani,sans-serif;font-weight:700;
+                            color:#d0dce8;font-size:1rem;line-height:1.3;
+                            margin-bottom:.3rem;'>{t['Nama']}</div>
+                        <div style='font-size:.78rem;color:#f0a500;font-weight:600;
+                            margin-bottom:.4rem;'>NIM: {t['nim']}</div>
                     </div>
-                </div>
                 """, unsafe_allow_html=True)
-
+                
         st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("""
         <div class='about-card' style='text-align:center;'>
