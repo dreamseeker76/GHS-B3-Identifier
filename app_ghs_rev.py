@@ -892,7 +892,7 @@ elif menu == "ℹ️  Tentang Aplikasi":
                         <div style='font-size:2.5rem;margin-bottom:.5rem;'>{t['avatar']}</div>
                         <div style='font-family:Rajdhani,sans-serif;font-weight:700;
                             color:#d0dce8;font-size:1rem;line-height:1.3;
-                            margin-bottom:.3rem;'>{t['Nama']}</div>
+                            margin-bottom:.3rem;'>{t['nama']}</div>
                         <div style='font-size:.78rem;color:#f0a500;font-weight:600;
                             margin-bottom:.4rem;'>NIM: {t['nim']}</div>
                     </div>
