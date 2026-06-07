@@ -4,9 +4,9 @@ import streamlit as st
 # URL GAMBAR GHS (dari folder assets di GitHub)
 # Ganti GITHUB_USER dan GITHUB_REPO sesuai repositori Anda
 # ─────────────────────────────────────────────
-GITHUB_USER = "GITHUB_USER"      # ← ganti dengan username GitHub Anda
-GITHUB_REPO = "GITHUB_REPO"      # ← ganti dengan nama repo GitHub Anda
-GITHUB_BRANCH = "main"           # ← ganti jika branch Anda bukan "main"
+GITHUB_USER = "dreamseeker76"
+GITHUB_REPO = "GHS-B3-Identifier"
+GITHUB_BRANCH = "main"        # ← nama branch (biasanya "main" atau "master")
 
 _BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{GITHUB_BRANCH}/assets"
 
