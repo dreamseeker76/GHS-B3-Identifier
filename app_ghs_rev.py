@@ -881,6 +881,7 @@ elif menu == "ℹ️  Tentang Aplikasi":
                 "avatar": "👨‍🎨",
                 "nama": "Faza Zain Ariq Athallah",
                 "nim": "2430559",
+            },
         ]
 
         cols = st.columns(3)
