@@ -6,7 +6,7 @@ import streamlit as st
 # ─────────────────────────────────────────────
 GITHUB_USER = "dreamseeker76"
 GITHUB_REPO = "GHS-B3-Identifier"
-GITHUB_BRANCH = "main"        # ← nama branch (biasanya "main" atau "master")
+GITHUB_BRANCH = "main"        # ← nama branch
 
 _BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{GITHUB_BRANCH}/assets"
 
@@ -506,7 +506,7 @@ with st.sidebar:
         <b style='color:#4a7a9a;'>Versi:</b> 1.0.0<br>
         <b style='color:#4a7a9a;'>Basis Regulasi:</b><br>
         PP No. 22/2021 · PermenLHK P.12/2020<br>
-        GHS Rev. 10 (2023) · ISO 11014
+        GHS Rev. 10 (2026) · ISO 11014
     </div>
     """, unsafe_allow_html=True)
 
