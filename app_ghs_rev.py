@@ -504,7 +504,7 @@ with st.sidebar:
     st.markdown("""
     <div style='font-size:.72rem;color:#3a5a7a;line-height:1.6;'>
         <b style='color:#4a7a9a;'>Versi:</b> 1.0.0<br>
-        <b style='color:#4a7a9a;'Released on June 7th, 2026<br>
+        Released on June 7th, 2026<br>
         <b style='color:#4a7a9a;'>Basis Regulasi:</b><br>
         PP No. 22/2021 · PermenLHK P.12/2020<br>
         GHS Rev. 10 (2023) · ISO 11014
