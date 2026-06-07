@@ -10,7 +10,7 @@ Aplikasi identifikasi simbol bahaya bahan kimia berbasis **Globally Harmonized S
 
 ## Cara Menjalankan Lokal
 pip install streamlit
-streamlit run app_ghs.py
+streamlit run app_ghs_rev.py
 
 ## Link Aplikasi
 [Buka Aplikasi](https://ghs-b3-identifier.streamlit.app)
