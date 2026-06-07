@@ -1,69 +1,26 @@
 import streamlit as st
-import base64
 
 # ─────────────────────────────────────────────
-# SVG GAMBAR GHS (embedded, tidak butuh internet)
+# URL GAMBAR GHS (dari folder assets di GitHub)
+# Ganti GITHUB_USER dan GITHUB_REPO sesuai repositori Anda
 # ─────────────────────────────────────────────
-GHS_SVG = {
-    "GHS01": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="60" font-size="28" text-anchor="middle" font-family="Arial Black">💥</text>
-  <text x="50" y="82" font-size="11" text-anchor="middle" font-family="Arial" font-weight="bold">EXPLOSIVE</text>
-</svg>""",
-    "GHS02": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="60" font-size="28" text-anchor="middle" font-family="Arial Black">🔥</text>
-  <text x="50" y="82" font-size="10" text-anchor="middle" font-family="Arial" font-weight="bold">FLAMMABLE</text>
-</svg>""",
-    "GHS03": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="58" font-size="26" text-anchor="middle" font-family="Arial Black">🔶</text>
-  <text x="50" y="82" font-size="9" text-anchor="middle" font-family="Arial" font-weight="bold">OXIDIZING</text>
-</svg>""",
-    "GHS04": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="58" font-size="26" text-anchor="middle" font-family="Arial Black">🫙</text>
-  <text x="50" y="82" font-size="8.5" text-anchor="middle" font-family="Arial" font-weight="bold">COMPRESSED</text>
-</svg>""",
-    "GHS05": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="58" font-size="26" text-anchor="middle" font-family="Arial Black">🧪</text>
-  <text x="50" y="82" font-size="10" text-anchor="middle" font-family="Arial" font-weight="bold">CORROSIVE</text>
-</svg>""",
-    "GHS06": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="60" font-size="30" text-anchor="middle" font-family="Arial Black">☠️</text>
-  <text x="50" y="82" font-size="10.5" text-anchor="middle" font-family="Arial" font-weight="bold">TOXIC</text>
-</svg>""",
-    "GHS07": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="60" font-size="30" text-anchor="middle" font-family="Arial Black">⚠️</text>
-  <text x="50" y="82" font-size="10.5" text-anchor="middle" font-family="Arial" font-weight="bold">HARMFUL</text>
-</svg>""",
-    "GHS08": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="58" font-size="26" text-anchor="middle" font-family="Arial Black">🫁</text>
-  <text x="50" y="82" font-size="8" text-anchor="middle" font-family="Arial" font-weight="bold">HEALTH HAZ</text>
-</svg>""",
-    "GHS09": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon points="50,5 95,95 5,95" fill="#e8000d" stroke="#000" stroke-width="3"/>
-  <polygon points="50,18 84,88 16,88" fill="white"/>
-  <text x="50" y="58" font-size="26" text-anchor="middle" font-family="Arial Black">🌿</text>
-  <text x="50" y="82" font-size="8.5" text-anchor="middle" font-family="Arial" font-weight="bold">ENVIRON HAZ</text>
-</svg>""",
+GITHUB_USER = "GITHUB_USER"      # ← ganti dengan username GitHub Anda
+GITHUB_REPO = "GITHUB_REPO"      # ← ganti dengan nama repo GitHub Anda
+GITHUB_BRANCH = "main"           # ← ganti jika branch Anda bukan "main"
+
+_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{GITHUB_BRANCH}/assets"
+
+GHS_IMG = {
+    "GHS01": f"{_BASE}/explosive.png",
+    "GHS02": f"{_BASE}/flammable.png",
+    "GHS03": f"{_BASE}/oxidizing.png",
+    "GHS04": f"{_BASE}/compressed_gas.png",
+    "GHS05": f"{_BASE}/corrosive.png",
+    "GHS06": f"{_BASE}/toxic.png",
+    "GHS07": f"{_BASE}/harmful.png",
+    "GHS08": f"{_BASE}/health_haz.png",
+    "GHS09": f"{_BASE}/enviro_haz.png",
 }
-
-def svg_to_data_uri(svg_str: str) -> str:
-    b64 = base64.b64encode(svg_str.encode()).decode()
-    return f"data:image/svg+xml;base64,{b64}"
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -664,13 +621,13 @@ elif menu == "🔬  Identifikasi Simbol":
         border_color = "#f0a500" if is_sel else "#1e3050"
         bg_color = "#1a2340" if is_sel else "#141c2e"
         label_color = "#f0a500" if is_sel else "#5a7a9a"
-        img_uri = svg_to_data_uri(GHS_SVG[d["code"]])
+        img_url = GHS_IMG[d["code"]]
         with cols[i % 5]:
             st.markdown(f"""
             <div style='background:{bg_color};border:2px solid {border_color};
                     border-radius:12px;padding:.8rem;text-align:center;
                     margin-bottom:.3rem;'>
-                <img src="{img_uri}" style="width:72px;height:72px;object-fit:contain;" />
+                <img src="{img_url}" style="width:72px;height:72px;object-fit:contain;" />
                 <div style='font-family:Rajdhani,sans-serif;font-size:.8rem;font-weight:600;
                         color:{label_color};margin-top:.3rem;'>{d['code']}</div>
             </div>
@@ -687,12 +644,12 @@ elif menu == "🔬  Identifikasi Simbol":
         col_left, col_right = st.columns([1, 2])
 
         with col_left:
-            img_uri_detail = svg_to_data_uri(GHS_SVG[d["code"]])
+            img_url_detail = GHS_IMG[d["code"]]
             st.markdown(f"""
             <div style='background:linear-gradient(135deg,#141c2e,#0f1826);
                         border:2px solid #f0a500;border-radius:16px;
                         padding:2rem;text-align:center;'>
-                <img src="{img_uri_detail}" style="width:130px;height:130px;object-fit:contain;" />
+                <img src="{img_url_detail}" style="width:130px;height:130px;object-fit:contain;" />
                 <div style='font-family:Rajdhani,sans-serif;font-size:1.4rem;
                             font-weight:700;color:#f0a500;margin:.8rem 0 .2rem;'>{d['code']}</div>
                 <div style='font-size:.8rem;color:#5a8aaa;letter-spacing:.1em;
